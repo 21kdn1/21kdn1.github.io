@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module">
+        import('/Name/Name.js')
+            .then(module => document.title = module.pageTitle || "Default Title")
+            .catch(() => {
+                document.title = "Error - Could not load title";
+            });
+    </script>
+    <link rel="icon" href="/Icon/Icon.png" type="image/jpeg">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: row;
+            height: 100vh;
+            margin: 0;
+            overflow-y: scroll;
+            background: linear-gradient(rgb(24,40,81), black);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: white;
+        }
+
+        .sidebar {
+            width: 60px;
+            background-color: #1a1a2e;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px 0;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .sidebar button {
+            width: 50px;
+            height: 50px;
+            margin: 10px 0;
+            background-color: #27293d;
+            border: none;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .sidebar button img {
+            width: 30px;
+            height: 30px;
+        }
+
+        .sidebar button:hover {
+            background-color: #3a3b57;
+        }
+
+        .content {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .games {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap; /* Allows wrapping to a new line */
+        }
+        .game {
+            width: 120px; /* Set a fixed width */
+            height: 150px; /* Set a fixed height */
+            text-align: center;
+            cursor: pointer;
+            background-color: rgba(0, 0, 0, 0.6); /* semi-transparent background */
+            border-radius: 15px; /* rounded edges */
+            padding: 10px;
+            transition: transform 0.2s;
+        }
+        .game:hover {
+            transform: scale(1.05);
+        }
+        .game img {
+            width: 80px; /* Set icon size */
+            height: 80px;
+            border-radius: 10px; /* rounded edges for icons */
+        }
+        .game-name {
+            margin-top: 10px;
+            font-weight: bold;
+            font-size: 14px; /* Ensure consistent font size */
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <button onclick="window.location.href='/'">
+            <img src="/Icon/home.png" alt="Home">
+        </button>
+        <button onclick="window.location.href='/game.html'">
+            <img src="/Icon/games.png" alt="Games">
+        </button>
+        <button onclick="window.location.href='/updates.html'">
+            <img src="/Icon/updates.png" alt="Updates">
+        </button>
+        <button onclick="window.location.href='/apps.html'">
+            <img src="/Icon/apps.png" alt="apps">
+        </button>
+    </div>
+    <div class="content">
+        <h1>Games</h1>
+        <div class="games">
+            <div class="game" onclick="window.location.href='/games/Bitlife.html'">
+                <img src="https://d.newsweek.com/en/full/1317374/bitlife-ribbons-how-get-all-complete-list-android-ios-cheats-guide-tips-become.jpg?w=1600&h=1600&q=88&f=75befc746fb83a0c568c44ca07bc5e64" alt="Bitlife">
+                <div class="game-name">Bitlife</div>
+            </div>
+            <div class="game" onclick="window.location.href='/games/Idle-Shark.html'">
+                <img src="https://play-lh.googleusercontent.com/XJd8OjggbH7G7jHRf9BdBPOrw0uuB11ZomncVh8R_PIhlOvF35dJasb_Obvv2HOtsw" alt="Idle Shark">
+                <div class="game-name">Idle Shark</div>
+            </div>
+            <div class="game" onclick="window.location.href='/games/Paper-io-2.html'">
+                <img src="https://www.metacritic.com/a/img/catalog/provider/6/12/6-1-684971-52.jpg" alt="Paper.io 2">
+                <div class="game-name">Paper.io 2</div>
+            </div>
+            <div class="game" onclick="window.location.href='/games/Basket-Ball-Stars.html'">
+                <img src="https://play-lh.googleusercontent.com/EjJV6kCXgX9EIhKEtpYhQF8-BUb5En8sDKpOPiWSQJUxv9_RAfl4tMxyIMkQYgeqC6I" alt="Basket Ball Stars">
+                <div class="game-name">Basket Ball Stars</div>
+            </div>
+            <div class="game" onclick="window.location.href='/games/House-Of-Hazards.html'">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhfgmZ-wUNU4z7icq-kUC1_Ryeu8i9i9_d_A&s" alt="House of Hazards">
+                <div class="game-name">House of Hazards</div>
+            </div>
+            <div class="game" onclick="window.location.href='/games/Doge-Miner.html'">
+                <img src="https://play-lh.googleusercontent.com/iKJ-QECii9BDz2SalvFl6RsTAqXONv-CHtt4tXeCs6JV-6RdP45CTCROYCE4P8Z7IA" alt="Doge Miner">
+                <div class="game-name">Doge Miner</div>
+            </div>
+            <div class="game" onclick="window.location.href='/games/Subway-Surfers.html'">
+                <img src="https://s2-ug.ap4r.com/image-aigc-article/seoPic/origin/f8eada242634419e7bce5436709c91089b12bed9.jpg">
+                <div class="game-name">Subway Surfers</div>
+            </div>
+            <div class="game" onclick="window.location.href='/games/Retro-Bowl.html'">
+                <img src="https://play-lh.googleusercontent.com/WRM5Y1xZmzcCP1YtO5zl6G2g7CU5c5ZfjX4UVrgi1bpNgkfy-wuB-bQx3kkeRfaGYQ">
+                <div class="game-name">Retro Bowl</div>
+            </div>
+            <div class="game" onclick="window.location.href='/games/Grind-Craft.html'">
+                <img src="https://play-lh.googleusercontent.com/l55FfwNy6R-UMlOhq0vBCDjXV1XPYK79k4jvCSTxNm851W3s5mdJwR5hK_zNA1NmKRXf">
+                <div class="game-name">Grind Craft</div>
+            </div>
+            <div class="game" onclick="window.location.href='/games/Idle-Breakout.html'">
+                <img src="https://play-lh.googleusercontent.com/e5jzYTn7Mjh9Ghn-DFpVedkOlRfSOyCS2AFgXdTrADIuuUbjx6vP6r_YOM2j5m7uLQ">
+                <div class="game-name">Idle Breakout</div>
+            </div>
+            <div class="game" onclick="window.location.href='/games/EmulatorJS.html'">
+                <img src="https://cdn1.iconfinder.com/data/icons/roundettes-for-os-x-vol-vi/512/Gameboy_Color_Teal-01-512.png">
+                <div class="game-name">EmulatorJS</div>
+            </div>
+            <div class="game" onclick="window.location.href='/games/Monkey-Mart.html'">
+                <img src="https://img.utdstc.com/icon/67f/4ab/67f4abb6b61b2a30ec4bfcbe2974b60e40c4c3ddb2cb7170d2be66a891b27417:200">
+                <div class="game-name">Monkey Mart</div>
+            </div>
+            <div class="game" onclick="window.location.href='/games/red-ball-4.html'">
+                <img src="https://play-lh.googleusercontent.com/_2RsmTzfPHkBeSmDVOzgKaSQGLNqYep9mRsuYErzIcQslzAt_0hQDgoP4wJCwvMJkizT">
+                <div class="game-name">Red Ball 4</div>
+            </div>
+            <div class="game" onclick="window.location.href='/games/LittleAlchemy2.html'">
+                <img src="https://play-lh.googleusercontent.com/3Pr4gCB3uzsYyoFZZiDOuvq_7SeQPjUQnHiUrwug154RnTGJ_YAX5zvZfCH-4r2JKBOX">
+                <div class="game-name">Little Alchemy 2</div>
+            </div>
+            <div class="game" onclick="window.location.href='/games/murder.html'">
+                <img src="https://play-lh.googleusercontent.com/BT7zrf4JNZj4pRV5YIRT4D0DydkuLEzVvnOwKmmOxuc1sbIUJyZbeaFOhjuLK4CXWFg">
+                <div class="game-name">Murder</div>
+            </div>
+            <div class="game" onclick="window.location.href='/games/Smash-Karts.html'">
+                <img src="https://play-lh.googleusercontent.com/cM1CXOuBIy0kjGfoCTOKNa812iuVX6X2DDop8xNH4mNyjuM-oj3wVqZ7wiAOizq_TA">
+                <div class="game-name">Smash Karts</div>
+            </div>
+            <div class="game" onclick="window.location.href='/games/Snow-Rider-3d.html'">
+                <img src="https://geometrydash2.com/data/image/3b79a8537ebc414fb4f9672a9b8c68c8-512x512.jpeg">
+                <div class="game-name">Snow-Ride-3d</div>
+            </div>
+            <div class="game" onclick="window.location.href='/games/Tunnel-Rush.html'">
+                <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple116/v4/54/bd/a7/54bda72c-b0ae-6bf5-12f5-58a70f6a1d36/AppIcon-0-0-1x_U007emarketing-0-7-0-85-220.png/512x512bb.jpg">
+                <div class="game-name">Tunnel Rush</div>
+            </div>
+            <div class="game" onclick="window.location.href='/games/Run-3.html'">
+                <img src="https://cdn.now.gg/apps-content/com.nowgg.h5.pub501.app51626/icon/run-3.png">
+                <div class="game-name">Run 3</div>
+            </div>
+            <div class="game" onclick="window.location.href='/games/Minecraft-15.html'">
+                <img src="https://cdn2.steamgriddb.com/icon_thumb/986648642d1a68a3178f6869689cc260.png">
+                <div class="game-name">Minecraft 1.5</div>
+            </div>
+            <div class="game" onclick="window.location.href='/games/Crossy-Road.html'">
+                <img src="https://play-lh.googleusercontent.com/qSpJ8AkOckjycaW_IHQBJX07TkepVqBm4dVX6BZv_oZ3OOcXeJjjvcBD9p1r5PNOrWo3">
+                <div class="game-name">Crossy Road</div>
+            </div>
+            <div class="game" onclick="window.location.href='/games/craftmine.html'">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOO7ex2qL_ZpQGsD20TXHqlBSLTXhliv5dtQ&s">
+                <div class="game-name">craftmine</div>
+            </div>
+            <div class="game" onclick="window.location.href='/games/Slope.html'">
+                <img src="https://play-lh.googleusercontent.com/uJn2i9h7KxYQarC_c3K4qH6o7gLtflFnhD_dN14MNkzHJ1NeNFzCL69jpB5mT0vCoQs">
+                <div class="game-name">Slope</div>
+            </div>
+            <div class="game" onclick="window.location.href='/games/Cookie-Clicker.html'">
+                <img src="https://play-lh.googleusercontent.com/Z1MOuuiD05ZN5LkVmMEvKF0mqAc-FknaQ2j8s4dZiO-LSPQX4EEA3RVJdlQEtxe96ok">
+                <div class="game-name">Cookie Clicker</div>
+            </div>
+            <div class="game" onclick="window.location.href='/games/Tiny-Fishing.html'">
+                <img src="https://img.tapimg.net/market/images/035bddeb4a9cec90bdafe06575d29e05.png?imageView2/0/h/270/format/jpg/interlace/1/ignore-error/1&t=1">
+                <div class="game-name">Tiny Fishing</div>
+            </div>
+            <div class="game" onclick="window.location.href='/games/PVZ.html'">
+                <img src="https://cdn2.steamgriddb.com/icon_thumb/a3788c8c64fd65c470e23e7534c3ebc8.png">
+                <div class="game-name">PVZ 1</div>
+            </div>
+            <div class="game" onclick="window.location.href='/games/Snow-Battle-io.html'">
+                <img src="https://play-lh.googleusercontent.com/X8FEOENa_t5mlRllBh2RRLc6sMnPIq56Wxa2ndValDOmwzIRhAv7MG6fT97TLQ2DK48">
+                <div class="game-name">Snow Battle</div>
+            </div>
+            <div class="game" onclick="window.location.href='/games/supermario64.html'">
+                <img src="https://pbs.twimg.com/media/FpYSzg-WcAEHnYH.png">
+                <div class="game-name">Super Mario 64</div>
+            </div>
+            <div class="game" onclick="window.location.href='/games/vex-8.html'">
+                <img src="https://img.gamedistribution.com/949009d40a2846f89f887de2285d6c28-512x512.jpg">
+                <div class="game-name">Vex 8</div>
+            </div>
+            <div class="game" onclick="window.location.href='/games/pokemon-sapphire.html'">
+                <img src="https://cdn6.aptoide.com/imgs/c/0/c/c0c7b93af6c82c5d61cfd4802c2bb8be_icon.png">
+                <div class="game-name">Pokemon Sapphire</div>
+            </div>
+            <div class="game" onclick="window.location.href='/games/pokemon-fire-red.html'">
+                <img src="https://cdn2.steamgriddb.com/grid/a821a1127ad303cf2b286cc5f103bc68.png">
+                <div class="game-name">Pokemon Fire Red</div>
+            </div>
+            <div class="game" onclick="window.location.href='/games/crashbandicoot.html'">
+                <img src="https://cdn.sanity.io/images/dnswb3uh/production/3fe3218905acc3a35a3a290dad2f8b6ea9f0462f-512x512.jpg">
+                <div class="game-name">Crash Bandicoot</div>
+            </div>
+            <div class="game" onclick="window.location.href='/games/super-mario-advanced-4.html'">
+                <img src="https://cache.lategames.net/static/251ec09e165e66d756cec47a32ea33e899f54173/image.jpeg">
+                <div class="game-name">Super Mario Advanced 4</div>
+            </div>
+            <div class="game" onclick="window.location.href='/games/gta-2.html'">
+                <img src="https://i.redd.it/a34h6r9cmc071.png">
+                <div class="game-name">GTA 2</div>
+            </div>
+            <div class="game" onclick="window.location.href='/games/zelda.html'">
+                <img src="https://cdn2.steamgriddb.com/icon_thumb/c1c6fff1643a3af5bd167488ff19012d.png">
+                <div class="game-name">zelda</div>
+            </div>
+            <div class="game" onclick="window.location.href='/games/sonic-advanced-2.html'">
+                <img src="https://m.media-amazon.com/images/I/61KryjoxCFL.jpg">
+                <div class="game-name">Sonic Advanced 2</div>
+            </div>
+            <div class="game" onclick="window.location.href='/games/pokemon-blue.html'">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSI6tYaYTVlvga6ooU3Tr8jmVjh7ttZBqN0TA&s">
+                <div class="game-name">Pokemon Blue</div>
+            </div>
+            <div class="game" onclick="window.location.href='/games/gladihoppers.html'">
+                <img src="https://play-lh.googleusercontent.com/HUuFbIPERNbpW2Q72WIqiJ8bKDzIgT_C4PnYvMBuH0wC3B_KvpKmumm1FXhZj3jmRHw">
+                <div class="game-name">Gladihoppers</div>
+            </div>
+            <div class="game" onclick="window.location.href='/games/zeepkist-crash-2d.html'">
+                <img src="https://cdn2.steamgriddb.com/grid/e276536555e20c46d9e21d1a513ff1d0.png">
+                <div class="game-name">Zeppkist Crash 2d</div>
+            </div>
+            <div class="game" onclick="window.location.href='/games/pokemon-emerald.html'">
+                <img src="https://images.nintendolife.com/d9df931524938/pokemon-emerald-cover.cover_large.jpg">
+                <div class="game-name">Pokemon Emerald</div>
+            </div>
+            <div class="game" onclick="window.location.href='/games/pokemon-ruby.html'">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRztYgLrA4YSCxjIsy9CVzCy54LcCRkhVx9MQ&s">
+                <div class="game-name">Pokemon Ruby</div>
+            </div>
+            <div class="game" onclick="window.location.href='/games/money-rush.html'">
+                <img src="https://i.ytimg.com/vi/U-800Ea53qc/maxresdefault.jpg">
+                <div class="game-name">Money Rush</div>
+            </div>
+            <div class="game" onclick="window.location.href='/games/idle-tree-city.html'">
+                <img src="https://img.poki-cdn.com/cdn-cgi/image/quality=78,width=314,height=314,fit=cover,f=auto/f605ee7355b8927942c082a866a9110a.jpeg">
+                <div class="game-name">Idle Tree City</div>
+            </div>
+            <div class="game" onclick="window.location.href='/games/save-the-doge.html'">
+                <img src="https://m.media-amazon.com/images/I/71Beq+43N1L.png">
+                <div class="game-name">Save The Doge</div>
+            </div>
+            <div class="game" onclick="window.location.href='/games/idle-ants.html'">
+                <img src="https://img.poki-cdn.com/cdn-cgi/image/quality=78,width=1200,height=1200,fit=cover,f=png/d769fe608502e4f17192cf496d1a4b16.jpeg">
+                <div class="game-name">Idle Ants</div>
+            </div>
+            <div class="game" onclick="window.location.href='/games/sausage-flipping.html'">
+                <img src="https://img.poki-cdn.com/cdn-cgi/image/quality=78,width=314,height=314,fit=cover,f=auto/7d0655113228257bad41d851c074600d.png">
+                <div class="game-name">Sausage Flipping</div>
+            </div>
+            <div class="game" onclick="window.location.href='/games/mr-bullet.html'">
+                <img src="https://play-lh.googleusercontent.com/qEnwkwPN4w5wiCC8ol8xTdyI-EAVXVHnPmD2u0qsZgL0enlBxgyyuGlL69mycqBWNac">
+                <div class="game-name">Mr Bullet</div>
+            </div>
+            <div class="game" onclick="window.location.href='/games/stickman-hook.html'">
+                <img src="https://space-waves.co/data/image/game/stickman-hook.jpg">
+                <div class="game-name">Stickman Hook</div>
+            </div>
+            <div class="game" onclick="window.location.href='/games/idle-digging-tycoon.html'">
+                <img src="https://img.poki-cdn.com/cdn-cgi/image/quality=78,width=1200,height=1200,fit=cover,f=png/7dd174b44dbf94bcd8dc03e488b223a9.png">
+                <div class="game-name">Idle Digging Tycoon</div>
+            </div>
+            <div class="game" onclick="window.location.href='/games/water-color-sort.html'">
+                <img src="https://m.media-amazon.com/images/I/71RUFx+g5EL.png">
+                <div class="game-name">Water Color Sort</div>
+            </div>
+            <div class="game" onclick="window.location.href='/games/dinosaurs-merge-master.html'">
+                <img src="https://store-images.s-microsoft.com/image/apps.64135.14062131209571597.57f3df34-0256-4337-9f33-1aeaf355ca72.9410300d-1a32-4506-a4fd-79ca548b3d7d">
+                <div class="game-name">Dinosaurs Merge Master</div>
+            </div>
+            <div class="game" onclick="window.location.href='/games/brain-test-tricky-puzzles.html'">
+                <img src="https://store-images.s-microsoft.com/image/apps.17020.14108235367275677.7ed9a69d-cdf8-4064-b6db-ce73db8646f9.b17b928a-5cd9-475d-a796-bf16bf29bebc?mode=scale&q=90&h=200&w=200&background=%230078D7">
+                <div class="game-name">Brain Test Tricky Puzzles</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

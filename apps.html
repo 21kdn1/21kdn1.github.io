@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module">
+        import('/Name/Name.js')
+            .then(module => document.title = module.pageTitle || "Default Title")
+            .catch(() => {
+                document.title = "Error - Could not load title";
+            });
+    </script>
+    <link rel="icon" href="/Icon/Icon.png" type="image/jpeg">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: row;
+            height: 100vh;
+            margin: 0;
+            overflow-y: scroll;
+            background: linear-gradient(rgb(24,40,81), black);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: white;
+        }
+
+        .sidebar {
+            width: 60px;
+            background-color: #1a1a2e;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px 0;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .sidebar button {
+            width: 50px;
+            height: 50px;
+            margin: 10px 0;
+            background-color: #27293d;
+            border: none;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .sidebar button img {
+            width: 30px;
+            height: 30px;
+        }
+
+        .sidebar button:hover {
+            background-color: #3a3b57;
+        }
+
+        .content {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .games {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap; /* Allows wrapping to a new line */
+        }
+        .game {
+            width: 120px; /* Set a fixed width */
+            height: 150px; /* Set a fixed height */
+            text-align: center;
+            cursor: pointer;
+            background-color: rgba(0, 0, 0, 0.6); /* semi-transparent background */
+            border-radius: 15px; /* rounded edges */
+            padding: 10px;
+            transition: transform 0.2s;
+        }
+        .game:hover {
+            transform: scale(1.05);
+        }
+        .game img {
+            width: 80px; /* Set icon size */
+            height: 80px;
+            border-radius: 10px; /* rounded edges for icons */
+        }
+        .game-name {
+            margin-top: 10px;
+            font-weight: bold;
+            font-size: 14px; /* Ensure consistent font size */
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <button onclick="window.location.href='/'">
+            <img src="/Icon/home.png" alt="Home">
+        </button>
+        <button onclick="window.location.href='/game.html'">
+            <img src="/Icon/games.png" alt="Games">
+        </button>
+        <button onclick="window.location.href='/updates.html'">
+            <img src="/Icon/updates.png" alt="Updates">
+        </button>
+        <button onclick="window.location.href='/apps.html'">
+            <img src="/Icon/apps.png" alt="apps">
+        </button>
+    </div>
+    <div class="content">
+        <h1>Games</h1>
+        <div class="games">
+            <div class="game" onclick="window.location.href='/apps/Uniub.html'">
+                <img src="https://static1.xdaimages.com/wordpress/wp-content/uploads/2020/05/NVIDIA-GeForce-NOW.jpg">
+                <div class="game-name">Uniub</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

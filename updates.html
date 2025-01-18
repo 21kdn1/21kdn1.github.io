@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module">
+        import('/Name/Name.js')
+            .then(module => document.title = module.pageTitle || "Default Title")
+            .catch(() => {
+                document.title = "Error - Could not load title";
+            });
+    </script>
+    <link rel="icon" href="/Icon/Icon.png" type="image/jpeg">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: row;
+            height: 100vh;
+            margin: 0;
+            overflow-y: scroll;
+            background: linear-gradient(rgb(24,40,81), black);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: white;
+        }
+
+        .sidebar {
+            width: 60px;
+            background-color: #1a1a2e;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px 0;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .sidebar button {
+            width: 50px;
+            height: 50px;
+            margin: 10px 0;
+            background-color: #27293d;
+            border: none;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .sidebar button img {
+            width: 30px;
+            height: 30px;
+        }
+
+        .sidebar button:hover {
+            background-color: #3a3b57;
+        }
+
+        .content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .content p {
+            font-size: 1.2rem;
+            text-align: center;
+            max-width: 800px;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+            <button onclick="window.location.href='/'">
+                <img src="/Icon/home.png" alt="Home">
+            </button>
+            <button onclick="window.location.href='/game.html'">
+                <img src="/Icon/games.png" alt="Games">
+            </button>
+            <button onclick="window.location.href='/updates.html'">
+                <img src="/Icon/updates.png" alt="About">
+            </button>
+            <button onclick="window.location.href='/apps.html'">
+                <img src="/Icon/apps.png" alt="apps">
+           </button>
+    </div>
+    <div class="content">
+        <h1>New Update V1</h1>
+        <h1>Added Games</h1>
+    </div>
+</body>
+</html>

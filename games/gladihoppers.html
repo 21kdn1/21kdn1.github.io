@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module">
+        import('/Name/Name.js')
+            .then(module => document.title = module.pageTitle || "Default Title")
+            .catch(() => {
+                document.title = "Error - Could not load title";
+            });
+    </script>
+    <link rel="icon" href="/Icon/Icon.png" type="image/jpeg">
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-y: scroll;
+            background: linear-gradient(rgb(24, 40, 81), black);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            position: relative;
+        }
+        iframe {
+            width: 80%;
+            height: 80%;
+            border: none;
+            border-radius: 15px;
+        }
+        .button-container {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+        .button, .fullscreen {
+            background: rgba(255, 255, 255, 0);
+            border: 2px solid rgba(255, 255, 255, 0.6);
+            border-radius: 50px;
+            padding: 10px 20px;
+            cursor: default;
+            font-size: 16px;
+            color: white;
+            margin-right: 10px;
+            transition: background 0.3s;
+        }
+        .button:hover, .fullscreen:hover {
+            background: rgba(255, 255, 255, 0.7);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="button-container">
+        <button class="button" onclick="window.location.href='/game.html'">Return To Home</button>
+        <button class="fullscreen" onclick="toggleFullscreen()">Fullscreen</button>
+    </div>
+
+    <iframe id="myIframe" src="" width="100%" height="100%"></iframe>
+
+    <script>
+        // Function to toggle fullscreen mode
+        function toggleFullscreen() {
+            const iframe = document.getElementById('myIframe');
+            if (iframe.requestFullscreen) {
+                iframe.requestFullscreen();
+            } else if (iframe.mozRequestFullScreen) { // Firefox
+                iframe.mozRequestFullScreen();
+            } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari, and Opera
+                iframe.webkitRequestFullscreen();
+            } else if (iframe.msRequestFullscreen) { // IE/Edge
+                iframe.msRequestFullscreen();
+            }
+        }
+
+        // Dynamically load GameUrl.js and set the iframe src
+        (function() {
+            var script = document.createElement('script');
+            script.src = '/Name/GameUrl.js'; // Path to GameUrl.js
+            document.head.appendChild(script);
+            
+            script.onload = function() {
+                var gameName = 'gladihoppers'; // Replace with your game name
+                document.getElementById('myIframe').src = GameBaseUrl + '/' + gameName; // No /Name here
+            };
+        })();
+    </script>
+</body>
+</html>

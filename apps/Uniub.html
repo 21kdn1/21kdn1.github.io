@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uniub</title>
+    <link rel="icon" href="https://raw.githubusercontent.com/tdug182/tdug182.github.io/refs/heads/main/Icon/Icon.png" type="image/jpeg">
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-y: scroll; /* Added scroll overflow */
+            background: linear-gradient(rgb(24, 40, 81), black); /* Gradient background */
+            background-repeat: no-repeat; /* Prevent background repeat */
+            background-attachment: fixed; /* Fixed background attachment */
+            position: relative;
+        }
+        iframe {
+            width: 80%;
+            height: 80%;
+            border: none;
+            border-radius: 15px;
+        }
+        .button-container {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+        .button, .fullscreen {
+            background: rgba(255, 255, 255, 0.5); /* Half transparent background */
+            border: none;
+            border-radius: 50px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-right: 10px;
+            transition: background 0.3s; /* Smooth transition for hover effect */
+        }
+        .button:hover, .fullscreen:hover {
+            background: rgba(255, 255, 255, 0.7); /* Less transparent on hover */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="button-container">
+        <button class="button" onclick="window.location.href='/'">Return To Home</button>
+        <button class="fullscreen" onclick="toggleFullscreen()">Fullscreen</button>
+    </div>
+
+    <iframe id="myIframe" src="https://tbug27.github.io/"></iframe>
+
+    <script>
+        function toggleFullscreen() {
+            const iframe = document.getElementById('myIframe');
+            if (iframe.requestFullscreen) {
+                iframe.requestFullscreen();
+            } else if (iframe.mozRequestFullScreen) { // Firefox
+                iframe.mozRequestFullScreen();
+            } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari, and Opera
+                iframe.webkitRequestFullscreen();
+            } else if (iframe.msRequestFullscreen) { // IE/Edge
+                iframe.msRequestFullscreen();
+            }
+        }
+    </script>
+
+</body>
+</html>
