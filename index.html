@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rainbow Games List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #121212;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .rainbow-text {
+            font-size: 28px;
+            font-weight: bold;
+            display: block;
+            text-align: center;
+            background: linear-gradient(45deg, #FF0000, #FF7F00, #FFFF00, #00FF00, #0000FF, #4B0082, #8B00FF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 400% 400%;
+            -webkit-animation: rainbowanim 10s ease infinite;
+            animation: rainbowanim 10s ease infinite;
+            margin-bottom: 15px;
+        }
+
+        input {
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            font-size: 20px;
+            border-radius: 5px;
+            outline: none;
+            background: #141414;
+            color: white;
+            border: 1px solid white;
+            margin-bottom: 15px;
+            text-align: center;
+            width: 250px;
+        }
+
+        .game-list {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .game-item a {
+            text-decoration: none;
+            font-size: 24px;
+            font-weight: bold;
+            display: inline-block;
+            text-align: center;
+            background: linear-gradient(45deg, #FF0000, #FF7F00, #FFFF00, #00FF00, #0000FF, #4B0082, #8B00FF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 400% 400%;
+            -webkit-animation: rainbowanim 10s ease infinite;
+            animation: rainbowanim 10s ease infinite;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .game-item a:hover {
+            transform: scale(1.1);
+        }
+
+        @keyframes rainbowanim { 
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+    </style>
+</head>
+<body>
+
+    <h1 class="rainbow-text">Rainbow Games List</h1>
+    <input type="text" id="searchBox" placeholder="Search for a game..." onkeyup="filterGames()">
+
+    <div class="game-list" id="gameList"></div>
+
+    <script src="gamesmanager.js"></script>
+
+</body>
+</html>
